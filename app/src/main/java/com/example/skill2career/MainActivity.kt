@@ -10,9 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.*
-import com.example.skill2career.ui.AdminScreen
-import com.example.skill2career.ui.StudentScreen
-import com.example.skill2career.ui.StudentDetails
 import com.example.skill2career.ui.theme.SKILL2careerTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,24 +32,42 @@ class MainActivity : ComponentActivity() {
                             startDestination = "login"
                         ) {
 
+                            // LOGIN
                             composable("login") {
-                                LoginScreen { _, _, role ->
-                                    if (role == "Student") {
-                                        navController.navigate("studentDetails")
-                                    } else {
-                                        navController.navigate("admin")
+                                LoginScreen(
+                                    onLoginClick = { _, _, role ->
+                                        if (role == "Student") {
+                                            navController.navigate("studentDetails")
+                                        } else {
+                                            navController.navigate("admin")
+                                        }
+                                    },
+                                    onSignUpClick = {
+                                        navController.navigate("signup")
                                     }
-                                }
+                                )
                             }
 
+                            // SIGNUP
+                            composable("signup") {
+                                SignUpScreen(
+                                    onSignUpSuccess = {
+                                        navController.navigate("login")
+                                    }
+                                )
+                            }
+
+                            // STUDENT DETAILS
                             composable("studentDetails") {
                                 StudentDetails(navController)
                             }
 
+                            // STUDENT DASHBOARD
                             composable("studentScreen") {
                                 StudentScreen()
                             }
 
+                            // ADMIN DASHBOARD
                             composable("admin") {
                                 AdminScreen()
                             }

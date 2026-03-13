@@ -25,7 +25,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun LoginScreen(
-    onLoginClick: (String, String, String) -> Unit
+    onLoginClick: (String, String, String) -> Unit,
+    onSignUpClick: () -> Unit
 ) {
 
     var selectedRole by remember { mutableStateOf("Student") }
@@ -161,7 +162,13 @@ fun LoginScreen(
                         singleLine = true
                     )
 
-                    Spacer(modifier = Modifier.height(24.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    TextButton(onClick = onSignUpClick) {
+                        Text("Don't have an account? Sign Up")
+                    }
+
+                    Spacer(modifier = Modifier.height(8.dp))
 
                     // 🔹 Login Button
                     Button(

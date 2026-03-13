@@ -1,4 +1,4 @@
-package com.example.skill2career.ui
+package com.example.skill2career
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
