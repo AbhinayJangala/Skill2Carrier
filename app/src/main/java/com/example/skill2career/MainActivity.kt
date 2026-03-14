@@ -37,7 +37,8 @@ class MainActivity : ComponentActivity() {
                                 LoginScreen(
                                     onLoginClick = { _, _, role ->
                                         if (role == "Student") {
-                                            navController.navigate("studentDetails")
+
+                                            navController.navigate("studentScreen")
                                         } else {
                                             navController.navigate("admin")
                                         }
@@ -55,11 +56,6 @@ class MainActivity : ComponentActivity() {
                                         navController.navigate("login")
                                     }
                                 )
-                            }
-
-                            // STUDENT DETAILS
-                            composable("studentDetails") {
-                                StudentDetails(navController)
                             }
 
                             // STUDENT DASHBOARD
