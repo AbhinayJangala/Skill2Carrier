@@ -25,6 +25,50 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.KeyboardOptions
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BranchDropdown(
+    selectedBranch: String,
+    onBranchSelected: (String) -> Unit
+) {
+    val branches = listOf("CSE", "CSA", "CSD", "CSH", "ECE", "ECI")
+    var expanded by remember { mutableStateOf(false) }
+
+    ExposedDropdownMenuBox(
+        expanded = expanded,
+        onExpandedChange = { expanded = !expanded },
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        OutlinedTextField(
+            value = selectedBranch,
+            onValueChange = {},
+            readOnly = true,
+            label = { Text("Select Branch") },
+            trailingIcon = {
+                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
+            },
+            modifier = Modifier
+                .fillMaxWidth(),
+            singleLine = true
+        )
+
+        ExposedDropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false }
+        ) {
+            branches.forEach { branch ->
+                DropdownMenuItem(
+                    text = { Text(branch) },
+                    onClick = {
+                        onBranchSelected(branch)
+                        expanded = false
+                    }
+                )
+            }
+        }
+    }
+}
+
 @Composable
 fun SignUpScreen(
     onSignUpSuccess: () -> Unit
@@ -38,9 +82,9 @@ fun SignUpScreen(
     var passwordVisible by remember { mutableStateOf(false) }
     var confirmPassword by remember { mutableStateOf("") }
     var confirmPasswordVisible by remember { mutableStateOf(false) }
+    var branch by remember { mutableStateOf("") }
     
     val passwordsMatch = password == confirmPassword || confirmPassword.isEmpty()
-    val emailValid = Patterns.EMAIL_ADDRESS.matcher(email).matches() || email.isEmpty()
 
     fun isValidEmail(email: String): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
@@ -142,6 +186,14 @@ fun SignUpScreen(
                     
                     Spacer(modifier = Modifier.height(8.dp))
                     
+
+                    BranchDropdown(
+                        selectedBranch = branch,
+                        onBranchSelected = { branch = it }
+                    )
+                    
+                    Spacer(modifier = Modifier.height(8.dp))
+                    
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
@@ -206,6 +258,7 @@ fun SignUpScreen(
                         modifier = Modifier.fillMaxWidth().height(50.dp),
                         enabled = firstName.isNotBlank() && lastName.isNotBlank() && 
                                  email.isNotBlank() && !emailError && 
+                                 branch.isNotBlank() &&
                                  password.isNotBlank() && confirmPassword.isNotBlank() && 
                                  passwordsMatch
                     ) {
