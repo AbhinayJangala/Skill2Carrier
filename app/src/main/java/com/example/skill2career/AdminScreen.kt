@@ -99,7 +99,7 @@ private val SidebarSelected = Color(0xFF243552)
 private val SidebarIconInactive = Color(0xFF8BA3CC)
 private val SidebarTextInactive = Color(0xFFB0BDD0)
 // ───────────────────────────────────────────────────────────────────────────────
-
+//---------
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AdminScreen(navController: NavController, mainViewModel: MainViewModel) {
