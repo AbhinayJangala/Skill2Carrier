@@ -1,0 +1,72 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+.env
+.env.*
+!.env.example
+
+server/.env
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+server/.env
+
+# Build files
+.gradle/
+build/
+server/build/
+app/build/
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.mv.db
+*.trace.db
+
+# Uploaded documents and personal information
+uploads/
+server/uploads/
+
+# Local configuration
+local.properties
+# Android Studio
+.idea/
+*.iml
+
+# Gradle and build outputs
+.gradle/
+**/build/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.mv.db
+*.trace.db
+
+# Personal uploads
+uploads/
+server/uploads/
+
+# Local configuration
+local.properties
