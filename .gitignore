@@ -70,3 +70,4 @@ server/uploads/
 
 # Local configuration
 local.properties
+app/google-services.json
