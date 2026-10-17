@@ -17,13 +17,12 @@
 
   <p>
     <a href="#-overview">Overview</a> •
+    <a href="#-my-contributions-frontend--android-ui-engineering">My Contributions</a> •
     <a href="#-features">Features</a> •
     <a href="#-tech-stack">Tech Stack</a> •
     <a href="#-architecture">Architecture</a> •
     <a href="#-screenshots">Screenshots</a> •
     <a href="#-getting-started">Getting Started</a> •
-    <a href="#-api--backend-endpoints">API Endpoints</a> •
-    <a href="#-database--data-model">Data Model</a> •
     <a href="#-contributing">Contributing</a>
   </p>
 
@@ -34,6 +33,8 @@
 ## 📌 Overview
 
 **SKILL2career (S2C)** is a comprehensive full-stack career readiness platform designed to empower students in navigating competitive recruitment landscapes while equipping academic institutions and placement administrators with intelligent recruitment tools.
+
+> 👥 **Group Project Notice:** This project was developed as a collaborative academic group project. This repository highlights my primary role and contribution as the **Frontend & Android UI Developer**, responsible for the complete UI/UX design, Jetpack Compose architecture, screen workflows, frontend state management, and client-side system integration.
 
 Built as an integrated solution comprising a modern **Jetpack Compose Android application** and an asynchronous **Kotlin Ktor backend**, SKILL2career delivers an end-to-end recruitment experience: from drafting resumes and tracking academic metrics to analyzing job readiness with generative AI and tracking multi-document application workflows.
 
@@ -46,6 +47,26 @@ The system features robust **Multi-Tier Role-Based Access Control (RBAC)** acros
 - **Automate Opportunity Discovery:** Enable administrators to source, review, and publish high-quality internships and scholarships using AI discovery agents.
 - **Streamline Campus Placement Workflows:** Offer administrators centralized tooling to verify CGPA eligibility, inspect official verification documents (Aadhar, marksheets, income proof), and manage candidate statuses.
 - **Deliver Modern Android Architecture:** Combine Jetpack Compose, Material 3, MVVM, Room caching, and Coroutines/Flow for a responsive user experience.
+
+---
+
+## 🎨 My Contributions (Frontend & Android UI Engineering)
+
+As part of this group project, I was responsible for leading and building the **Frontend Architecture & Android User Interface**, translating product specifications into an intuitive, responsive mobile application.
+
+### Key Contributions & Technical Deliverables
+
+- **100% Declarative UI with Jetpack Compose:** Built the entire client interface using Kotlin and Jetpack Compose, adopting unidirectional data flow and reactive state-driven principles.
+- **Bespoke Design System & Theming:** Designed the app's signature "Classical Professional" visual identity — utilizing Deep Navy (`#1B2A4A`), Mid Navy (`#2E3D5E`), Warm Gold (`#C9A84C`), Ivory (`#F5F0E8`), and Slate Card surfaces paired with Material 3 typography and custom elevation styles.
+- **End-to-End Screen Development & UX:**
+  - **Authentication & Onboarding (`LoginScreen`, `SignUpScreen`):** Role switcher pills (Student vs. Admin), dynamic input validation, animated entrance transitions, and password visibility controls.
+  - **Student Dashboard & Catalog (`StudentScreen`, `OpportunitiesScreen`, `SavedScreen`, `ProfileScreen`):** Visual stats cards, filterable opportunity grids (tags, search, type pills), bookmarking interactions, and custom navigation drawer.
+  - **Interactive Resume Builder (`ResumeBuilderScreen`):** Step-by-step form wizard with dynamic section entries (education, experience, projects, skills) and native on-device PDF generation via `android.graphics.pdf.PdfDocument`.
+  - **Academic CGPA Tracker (`CGPATrackerScreen`):** Semester course managers, credit hour selectors, grade point calculations, and real-time visual SGPA/CGPA feedback.
+  - **AI Intelligence UI (`AIResumeAnalysisScreen`):** Dual-tab interface for Resume Audit & Skills Gap analysis, file picker integration for PDF/DOCX resumes, reactive loading animations, and actionable diagnostic cards.
+  - **Admin Management Hub (`AdminScreen`):** Navigation drawer, tabs for reviewing student applications, inspecting uploaded PDFs, publishing new postings, and approving/rejecting candidate requests.
+- **Client Architecture & State Management:** Implemented MVVM architecture with `MainViewModel`, managing UI state with Compose `State` and Kotlin Coroutines/Flow, decoupled from network and database layers.
+- **Client-Side Networking & Persistence:** Integrated Retrofit 2 REST calls, multipart file upload pipelines, error handling, and Room database local caching for offline usability.
 
 ---
 
@@ -525,15 +546,15 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author & Contributions
 
 <div align="center">
 
 ### Abhinay Jangala
 
-Android Developer | Full-Stack Kotlin Developer
+**Role:** Frontend & Android UI Lead | Collaborative Group Project
 
-Building modern Android applications focused on clean architecture, AI integration, and real-world problem solving.
+Engineered the complete Android user interface, Jetpack Compose screen architecture, design system, and client-side experience for SKILL2career.
 
 [![GitHub](https://img.shields.io/badge/GitHub-AbhinayJangala-181717?style=for-the-badge&logo=github)](https://github.com/AbhinayJangala)
 
